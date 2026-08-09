@@ -2,8 +2,8 @@
 
 backend:
   name: github
-  branch: main
-  repo: ZJ/lith-silicon-site
+  branch: master
+  repo: Chenjie-Lu/lith-silicon-site
   site_domain: https://lith-silicon.vercel.app
   base_url: https://lith-silicon.vercel.app
   auth_endpoint: oauth
