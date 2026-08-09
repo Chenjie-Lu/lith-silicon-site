@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <defs>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <!-- Geometric Li monogram mark -->
+  <rect x="6" y="8" width="20" height="44" rx="4" fill="url(#accent)"/>
+  <line x1="16" y1="8" x2="16" y2="52" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="16" cy="6" r="3" fill="#06b6d4"/>
+  <!-- Wordmark -->
+  <text x="36" y="40" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700" fill="#f1f5f9" letter-spacing="-0.5">LixSi</text>
+  <text x="36" y="54" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="400" fill="#94a3b8" letter-spacing="2">ENERGY</text>
+</svg>

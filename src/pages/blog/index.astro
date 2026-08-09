@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { t, getLocale } from '../../utils/site';
+import { blogPosts } from '../../data/blog-posts';
+
+const locale = getLocale();
+const tzh = (key) => t(key, locale);
+---
+
+<Layout>
+  <section class="pt-28 pb-20 bg-[#070b14]" id="main-content">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="observe">
+        <h1 class="text-4xl md:text-6xl font-black text-white mb-4">{tzh('blogList.title')}</h1>
+        <p class="text-slate-400 text-lg max-w-2xl mb-10">{tzh('blogList.subtitle')}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-[#070b14]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div id="blog-list">
+        {Object.entries(blogPosts).map(([slug, post]) => {
+          const href = '/blog/' + slug;
+          return (
+            <a href={href} class="observe card block p-10 mb-6 hover-lift no-underline group">
+              <div class="flex items-center gap-3 mb-5 flex-wrap">
+                <span class="px-3 py-1.5 bg-blue-500/10 text-blue-400 text-xs font-mono rounded-full border border-blue-500/20">{locale === 'zh' ? post.category : post.categoryEn}</span>
+                <span class="text-slate-500 text-xs font-mono">{post.date}</span>
+              </div>
+              <h2 class="text-2xl font-bold text-white mb-4 leading-tight group-hover:text-blue-400 transition-colors">
+                {locale === 'zh' ? post.title : post.titleEn}
+              </h2>
+              <p class="text-slate-400 leading-relaxed mb-6">
+                {locale === 'zh' ? post.excerpt : post.excerptEn}
+              </p>
+              <div class="flex gap-2 flex-wrap">
+                {(locale === 'zh' ? post.tags : post.tagsEn).map(tag => (
+                  <span key={tag} class="px-2.5 py-1 bg-slate-800 text-slate-400 text-xs rounded-full border border-white/5 font-mono">{tag}</span>
+                ))}
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,68 @@
+---
+title: '后台管理 - 锂硅新能';
+description: '锂硅新能网站后台管理系统';
+---
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LiSi Energy Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Decap CMS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.3.0/dist/decap-cms.css" />
+</head>
+<body>
+  <div id="cms-root"></div>
+
+  <!-- Decap CMS JS -->
+  <script src="https://unpkg.com/decap-cms@^3.3.0/dist/decap-cms.js"></script>
+
+  <script>
+    try {
+      if (window.CMS) {
+        window.CMS.init({
+          config: {
+            backend: {
+              name: 'github',
+              repo: 'ZJ/lith-silicon-site',
+              branch: 'main',
+              open_author_info: false,
+            },
+            media_folder: 'public/uploads',
+            public_folder: '/uploads',
+            collections: [
+              {
+                name: 'blog',
+                label: '博客文章',
+                folder: 'content/blog',
+                create: true,
+                slug: '{{slug}}',
+                fields: [
+                  { label: '日期', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD' },
+                  { label: '分类（中文）', name: 'category', widget: 'string' },
+                  { label: '分类（英文）', name: 'categoryEn', widget: 'string' },
+                  { label: '标题（中文）', name: 'title', widget: 'string' },
+                  { label: '标题（英文）', name: 'titleEn', widget: 'string' },
+                  { label: '摘要（中文）', name: 'excerpt', widget: 'string' },
+                  { label: '摘要（英文）', name: 'excerptEn', widget: 'string' },
+                  { label: '标签（中文）', name: 'tags', widget: 'list', allow_add: true },
+                  { label: '标签（英文）', name: 'tagsEn', widget: 'list', allow_add: true },
+                  { label: '正文（中文）', name: 'body', widget: 'markdown' },
+                  { label: '正文（英文）', name: 'contentEn', widget: 'markdown', required: false },
+                ],
+              },
+            ],
+          },
+        });
+      }
+    } catch (e) {
+      console.error('CMS init error:', e);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { t, getLocale, services } from '../utils/site';
+
+const locale = getLocale();
+const tzh = (key) => t(key, locale);
+---
+
+<Layout>
+  <section class="relative min-h-[100dvh] flex items-center overflow-hidden bg-[#070b14]">
+    <div class="absolute inset-0 opacity-[0.04]"
+      style={{
+        backgroundImage: 'linear-gradient(rgba(59,130,246,1) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,1) 1px, transparent 1px)',
+        backgroundSize: '64px 64px'
+      }}
+    ></div>
+    <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-blue-600/8 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-cyan-600/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-8">
+          <div class="observe animate-in mb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full">
+              <span class="relative flex h-2 w-2"><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span></span>
+              <span class="text-blue-400 text-xs font-mono tracking-widest uppercase">{tzh('hero.tagline')}</span>
+            </div>
+          </div>
+
+          <h1 class="observe animate-in animate-delay-1 text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] tracking-tight text-white mb-8">
+            <span class="block">硅碳负极</span>
+            <span class="block text-blue-400">技术顾问</span>
+          </h1>
+
+          <p class="observe animate-in animate-delay-2 text-xl text-slate-400 max-w-xl leading-relaxed mb-10 font-light">
+            {tzh('hero.subtitle')}
+          </p>
+
+          <div class="observe animate-in animate-delay-3 flex flex-wrap gap-4">
+            <a href="/services" class="group inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition-all no-underline">
+              <span>{tzh('hero.cta')}</span>
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/blog" class="inline-flex items-center gap-3 px-8 py-4 border border-slate-700 text-slate-300 font-semibold rounded-full hover:border-slate-500 hover:text-white transition-all no-underline">
+              <span>{tzh('hero.ctaSecondary')}</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 observe animate-in animate-delay-4">
+          <div class="relative bg-[#0d1321] border border-white/8 rounded-2xl p-8">
+            <div class="flex items-center gap-2 mb-6">
+              <div class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+              <span class="text-slate-500 text-xs font-mono uppercase tracking-widest">Metrics</span>
+            </div>
+            <div class="space-y-5">
+              <div>
+                <div class="flex justify-between text-sm mb-2">
+                  <span class="text-slate-400">{tzh('stats.experience')}</span>
+                  <span class="text-white font-bold">3<span class="text-blue-400 text-sm">+</span></span>
+                </div>
+                <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full w-[85%] bg-blue-500 rounded-full"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-2">
+                  <span class="text-slate-400">{tzh('stats.focus')}</span>
+                  <span class="text-white font-bold">100<span class="text-cyan-400 text-sm">%</span></span>
+                </div>
+                <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full w-full bg-cyan-500 rounded-full"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-2">
+                  <span class="text-slate-400">{tzh('stats.clients')}</span>
+                  <span class="text-white font-bold">&#8734;</span>
+                </div>
+                <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full w-[70%] bg-blue-500 rounded-full"></div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-5 border-t border-white/5 flex gap-2 flex-wrap">
+              {['硅碳负极', '电化学', '产业化'].map((tag) => (
+                <span key={tag} class="px-2.5 py-1 bg-slate-800/80 text-slate-400 text-xs font-mono rounded-full border border-white/5">{tag}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 bg-[#070b14] relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="observe mb-16">
+        <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight mb-4">{tzh('services.title')}</h2>
+        <p class="text-slate-400 text-lg max-w-xl leading-relaxed">{tzh('services.subtitle')}</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {services.map((service, i) => (
+          <div key={i} class="observe group card p-8 hover-lift" style={{ animationDelay: `${i * 0.06}s` }}>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="w-11 h-11 bg-blue-500/10 border border-blue-500/20 rounded-xl flex items-center justify-center text-blue-400 shrink-0">
+                {i === 0 && <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>}
+                {i === 1 && <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>}
+                {i === 2 && <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>}
+                {i === 3 && <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>}
+                {i === 4 && <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>}
+                {i === 5 && <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>}
+              </div>
+              <span class="text-slate-600 text-xs font-mono">0{i + 1}</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+              {service.zh.title}
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              {service.zh.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div class="observe mt-12 text-center">
+        <a href="/services" class="group inline-flex items-center gap-2 text-slate-400 hover:text-blue-400 font-medium text-sm transition-colors no-underline">
+          {tzh('services.viewAll')}
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 bg-[#0d1321] relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="observe flex items-end justify-between mb-14">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight">{tzh('blog.title')}</h2>
+        </div>
+        <a href="/blog" class="hidden md:inline-flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors no-underline font-medium text-sm">
+          <span>{tzh('blog.viewAll')}</span>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <a href="/blog/silicon-carbon-anode-development-trends-2026" class="observe group card block overflow-hidden no-underline">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <div class="h-56 lg:h-auto bg-gradient-to-br from-blue-950/50 via-[#0d1321] to-cyan-950/30 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20"
+              style={{
+                backgroundImage: 'radial-gradient(circle at 30% 50%, rgba(59,130,246,0.5) 0%, transparent 50%)'
+              }}
+            ></div>
+          </div>
+          <div class="p-10 flex flex-col justify-center">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-mono rounded-full border border-blue-500/20">行业趋势</span>
+              <span class="text-slate-500 text-xs font-mono">2026-08-01</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4 leading-tight group-hover:text-blue-400 transition-colors">
+              2026年硅碳负极材料发展态势分析
+            </h3>
+            <p class="text-slate-400 leading-relaxed text-sm mb-6">
+              硅碳负极已成为高能量密度电池的核心材料路线，本文分析当前技术瓶颈与突破方向。
+            </p>
+            <div class="flex gap-2 flex-wrap">
+              {['硅碳', '负极', '趋势'].map(tag => (
+                <span key={tag} class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded-full border border-white/5 font-mono">{tag}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-32 bg-[#070b14] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5"
+      style={{
+        backgroundImage: 'linear-gradient(rgba(59,130,246,1) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,1) 1px, transparent 1px)',
+        backgroundSize: '80px 80px'
+      }}
+    ></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <div class="observe">
+        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-8">
+          {tzh('about.mission')}
+        </h2>
+        <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">{tzh('contact.subtitle')}</p>
+        <a href="/contact" class="group inline-flex items-center gap-3 px-10 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition-all no-underline">
+          <span>{tzh('contact.title')}</span>
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-16 bg-[#070b14] border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-14">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-5">
+            <img src="/logo.svg" alt="LiSi" class="h-7 w-auto" />
+            <span class="font-bold text-white text-lg">锂硅新能</span>
+          </div>
+          <p class="text-slate-500 text-sm max-w-sm leading-relaxed">{tzh('hero.subtitle')}</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white text-xs uppercase tracking-widest mb-5">服务</h4>
+          <ul class="space-y-3">
+            {services.slice(0, 4).map((s) => (
+              <li><a href="/services" class="text-slate-500 hover:text-slate-300 text-sm transition-colors no-underline">{s.zh.title}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white text-xs uppercase tracking-widest mb-5">导航</h4>
+          <ul class="space-y-3">
+            <li><a href="/about" class="text-slate-500 hover:text-slate-300 text-sm transition-colors no-underline">{tzh('about.title')}</a></li>
+            <li><a href="/contact" class="text-slate-500 hover:text-slate-300 text-sm transition-colors no-underline">{tzh('contact.title')}</a></li>
+            <li><a href="/blog" class="text-slate-500 hover:text-slate-300 text-sm transition-colors no-underline">{tzh('nav.blog')}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-slate-600 text-xs font-mono">{tzh('footer.copyright')}</p>
+        <div class="flex gap-6">
+          <a href="/" class="text-slate-600 hover:text-slate-400 text-xs transition-colors no-underline">{tzh('nav.home')}</a>
+          <a href="/services" class="text-slate-600 hover:text-slate-400 text-xs transition-colors no-underline">{tzh('nav.services')}</a>
+          <a href="/blog" class="text-slate-600 hover:text-slate-400 text-xs transition-colors no-underline">{tzh('nav.blog')}</a>
+          <a href="/about" class="text-slate-600 hover:text-slate-400 text-xs transition-colors no-underline">{tzh('nav.about')}</a>
+          <a href="/contact" class="text-slate-600 hover:text-slate-400 text-xs transition-colors no-underline">{tzh('nav.contact')}</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>
