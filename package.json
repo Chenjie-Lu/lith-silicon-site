@@ -2,9 +2,7 @@
   "name": "lith-silicon-site",
   "type": "module",
   "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
+  "engines": {},
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -18,7 +16,6 @@
     "@iconify-json/tabler": "^1.2.38",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^6.4.8",
-    "astro-decap-cms-oauth": "^0.5.2",
     "astro-i18n": "^2.2.4",
     "lightningcss": "^1.27.0",
     "lightningcss-win32-x64-msvc": "^1.27.0",
