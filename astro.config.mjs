@@ -9,6 +9,17 @@ export default defineConfig({
     sitemap(),
   ],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [
+      tailwindcss(),
+      {
+        name: 'set-content-type',
+        configureServer(server) {
+          server.middlewares.use((req, res, next) => {
+            res.setHeader('Content-Type', 'text/html; charset=utf-8');
+            next();
+          });
+        },
+      },
+    ],
   },
 });
