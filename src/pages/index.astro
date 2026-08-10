@@ -17,7 +17,7 @@ export const ogType = 'website';
 </head>
 
 <Layout>
-  <section class="relative min-h-[100dvh] flex items-center overflow-hidden bg-[#070b14]">
+  <section class="relative min-h-[100dvh] flex items-center overflow-hidden bg-white">
     <div class="absolute inset-0 opacity-[0.04]"
       style={{
         backgroundImage: 'linear-gradient(rgba(59,130,246,1) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,1) 1px, transparent 1px)',
@@ -37,28 +37,28 @@ export const ogType = 'website';
             </div>
           </div>
 
-          <h1 class="observe animate-in animate-delay-1 text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] tracking-tight text-white mb-8">
+          <h1 class="observe animate-in animate-delay-1 text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] tracking-tight text-slate-900 mb-8">
             <span class="block">硅碳负极</span>
             <span class="block text-blue-400">技术顾问</span>
           </h1>
 
-          <p class="observe animate-in animate-delay-2 text-xl text-slate-400 max-w-xl leading-relaxed mb-10 font-light">
+          <p class="observe animate-in animate-delay-2 text-xl text-slate-600 max-w-xl leading-relaxed mb-10 font-light">
             {tzh('hero.subtitle')}
           </p>
 
           <div class="observe animate-in animate-delay-3 flex flex-wrap gap-4">
-            <a href="/services" class="group inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition-all no-underline">
+            <a href="/services" class="group inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-slate-900 font-semibold rounded-full hover:bg-blue-500 transition-all no-underline">
               <span>{tzh('hero.cta')}</span>
               <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="/blog" class="inline-flex items-center gap-3 px-8 py-4 border border-slate-700 text-slate-300 font-semibold rounded-full hover:border-slate-500 hover:text-white transition-all no-underline">
+            <a href="/blog" class="inline-flex items-center gap-3 px-8 py-4 border border-slate-700 text-slate-700 font-semibold rounded-full hover:border-slate-500 hover:text-slate-900 transition-all no-underline">
               <span>{tzh('hero.ctaSecondary')}</span>
             </a>
           </div>
         </div>
 
         <div class="lg:col-span-4 observe animate-in animate-delay-4">
-          <div class="relative bg-[#0d1321] border border-white/8 rounded-2xl p-8">
+          <div class="relative bg-slate-50 border border-white/8 rounded-2xl p-8">
             <div class="flex items-center gap-2 mb-6">
               <div class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
               <span class="text-slate-500 text-xs font-mono uppercase tracking-widest">Metrics</span>
@@ -66,35 +66,35 @@ export const ogType = 'website';
             <div class="space-y-5">
               <div>
                 <div class="flex justify-between text-sm mb-2">
-                  <span class="text-slate-400">{tzh('stats.experience')}</span>
-                  <span class="text-white font-bold">3<span class="text-blue-400 text-sm">+</span></span>
+                  <span class="text-slate-600">{tzh('stats.experience')}</span>
+                  <span class="text-slate-900 font-bold">3<span class="text-blue-400 text-sm">+</span></span>
                 </div>
-                <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-1.5 bg-slate-100 rounded-full overflow-hidden">
                   <div class="h-full w-[85%] bg-blue-500 rounded-full"></div>
                 </div>
               </div>
               <div>
                 <div class="flex justify-between text-sm mb-2">
-                  <span class="text-slate-400">{tzh('stats.focus')}</span>
-                  <span class="text-white font-bold">100<span class="text-cyan-400 text-sm">%</span></span>
+                  <span class="text-slate-600">{tzh('stats.focus')}</span>
+                  <span class="text-slate-900 font-bold">100<span class="text-cyan-400 text-sm">%</span></span>
                 </div>
-                <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-1.5 bg-slate-100 rounded-full overflow-hidden">
                   <div class="h-full w-full bg-cyan-500 rounded-full"></div>
                 </div>
               </div>
               <div>
                 <div class="flex justify-between text-sm mb-2">
-                  <span class="text-slate-400">{tzh('stats.clients')}</span>
-                  <span class="text-white font-bold">&#8734;</span>
+                  <span class="text-slate-600">{tzh('stats.clients')}</span>
+                  <span class="text-slate-900 font-bold">&#8734;</span>
                 </div>
-                <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-1.5 bg-slate-100 rounded-full overflow-hidden">
                   <div class="h-full w-[70%] bg-blue-500 rounded-full"></div>
                 </div>
               </div>
             </div>
             <div class="mt-6 pt-5 border-t border-white/5 flex gap-2 flex-wrap">
               {['硅碳负极', '电化学', '产业化'].map((tag) => (
-                <span key={tag} class="px-2.5 py-1 bg-slate-800/80 text-slate-400 text-xs font-mono rounded-full border border-white/5">{tag}</span>
+                <span key={tag} class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-mono rounded-full border border-white/5">{tag}</span>
               ))}
             </div>
           </div>
@@ -103,11 +103,11 @@ export const ogType = 'website';
     </div>
   </section>
 
-  <section class="py-32 bg-[#070b14] relative">
+  <section class="py-32 bg-white relative">
     <div class="max-w-7xl mx-auto px-6">
       <div class="observe mb-16">
-        <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight mb-4">{tzh('services.title')}</h2>
-        <p class="text-slate-400 text-lg max-w-xl leading-relaxed">{tzh('services.subtitle')}</p>
+        <h2 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4">{tzh('services.title')}</h2>
+        <p class="text-slate-600 text-lg max-w-xl leading-relaxed">{tzh('services.subtitle')}</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -124,10 +124,10 @@ export const ogType = 'website';
               </div>
               <span class="text-slate-600 text-xs font-mono">0{i + 1}</span>
             </div>
-            <h3 class="text-lg font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 group-hover:text-blue-400 transition-colors">
               {service.zh.title}
             </h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
+            <p class="text-slate-600 text-sm leading-relaxed">
               {service.zh.desc}
             </p>
           </div>
@@ -135,7 +135,7 @@ export const ogType = 'website';
       </div>
 
       <div class="observe mt-12 text-center">
-        <a href="/services" class="group inline-flex items-center gap-2 text-slate-400 hover:text-blue-400 font-medium text-sm transition-colors no-underline">
+        <a href="/services" class="group inline-flex items-center gap-2 text-slate-600 hover:text-blue-400 font-medium text-sm transition-colors no-underline">
           {tzh('services.viewAll')}
           <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -143,13 +143,13 @@ export const ogType = 'website';
     </div>
   </section>
 
-  <section class="py-32 bg-[#0d1321] relative">
+  <section class="py-32 bg-slate-50 relative">
     <div class="max-w-7xl mx-auto px-6">
       <div class="observe flex items-end justify-between mb-14">
         <div>
-          <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight">{tzh('blog.title')}</h2>
+          <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">{tzh('blog.title')}</h2>
         </div>
-        <a href="/blog" class="hidden md:inline-flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors no-underline font-medium text-sm">
+        <a href="/blog" class="hidden md:inline-flex items-center gap-2 text-slate-600 hover:text-blue-400 transition-colors no-underline font-medium text-sm">
           <span>{tzh('blog.viewAll')}</span>
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -169,15 +169,15 @@ export const ogType = 'website';
               <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-mono rounded-full border border-blue-500/20">行业趋势</span>
               <span class="text-slate-500 text-xs font-mono">2026-08-01</span>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-4 leading-tight group-hover:text-blue-400 transition-colors">
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 leading-tight group-hover:text-blue-400 transition-colors">
               2026年硅碳负极材料发展态势分析
             </h3>
-            <p class="text-slate-400 leading-relaxed text-sm mb-6">
+            <p class="text-slate-600 leading-relaxed text-sm mb-6">
               硅碳负极已成为高能量密度电池的核心材料路线，本文分析当前技术瓶颈与突破方向。
             </p>
             <div class="flex gap-2 flex-wrap">
               {['硅碳', '负极', '趋势'].map(tag => (
-                <span key={tag} class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded-full border border-white/5 font-mono">{tag}</span>
+                <span key={tag} class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-full border border-white/5 font-mono">{tag}</span>
               ))}
             </div>
           </div>
@@ -186,7 +186,7 @@ export const ogType = 'website';
     </div>
   </section>
 
-  <section class="py-32 bg-[#070b14] relative overflow-hidden">
+  <section class="py-32 bg-white relative overflow-hidden">
     <div class="absolute inset-0 opacity-5"
       style={{
         backgroundImage: 'linear-gradient(rgba(59,130,246,1) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,1) 1px, transparent 1px)',
@@ -197,11 +197,11 @@ export const ogType = 'website';
 
     <div class="relative max-w-4xl mx-auto px-6 text-center">
       <div class="observe">
-        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-8">
+        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight mb-8">
           {tzh('about.mission')}
         </h2>
-        <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">{tzh('contact.subtitle')}</p>
-        <a href="/contact" class="group inline-flex items-center gap-3 px-10 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition-all no-underline">
+        <p class="text-slate-600 text-lg mb-10 max-w-2xl mx-auto">{tzh('contact.subtitle')}</p>
+        <a href="/contact" class="group inline-flex items-center gap-3 px-10 py-4 bg-blue-600 text-slate-900 font-semibold rounded-full hover:bg-blue-500 transition-all no-underline">
           <span>{tzh('contact.title')}</span>
           <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -209,41 +209,41 @@ export const ogType = 'website';
     </div>
   </section>
 
-  <footer class="py-16 bg-[#070b14] border-t border-white/5">
+  <footer class="py-16 bg-white border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-14">
         <div class="md:col-span-2">
           <div class="flex items-center gap-3 mb-5">
             <img src="/logo.svg" alt="LiSi" class="h-7 w-auto" />
-            <span class="font-bold text-white text-lg">锂硅新能</span>
+            <span class="font-bold text-slate-900 text-lg">锂硅新能</span>
           </div>
           <p class="text-slate-500 text-sm max-w-sm leading-relaxed">{tzh('hero.subtitle')}</p>
         </div>
         <div>
-          <h4 class="font-semibold text-white text-xs uppercase tracking-widest mb-5">服务</h4>
+          <h4 class="font-semibold text-slate-900 text-xs uppercase tracking-widest mb-5">服务</h4>
           <ul class="space-y-3">
             {services.slice(0, 4).map((s) => (
-              <li><a href="/services" class="text-slate-500 hover:text-slate-300 text-sm transition-colors no-underline">{s.zh.title}</a></li>
+              <li><a href="/services" class="text-slate-500 hover:text-slate-700 text-sm transition-colors no-underline">{s.zh.title}</a></li>
             ))}
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-white text-xs uppercase tracking-widest mb-5">导航</h4>
+          <h4 class="font-semibold text-slate-900 text-xs uppercase tracking-widest mb-5">导航</h4>
           <ul class="space-y-3">
-            <li><a href="/about" class="text-slate-500 hover:text-slate-300 text-sm transition-colors no-underline">{tzh('about.title')}</a></li>
-            <li><a href="/contact" class="text-slate-500 hover:text-slate-300 text-sm transition-colors no-underline">{tzh('contact.title')}</a></li>
-            <li><a href="/blog" class="text-slate-500 hover:text-slate-300 text-sm transition-colors no-underline">{tzh('nav.blog')}</a></li>
+            <li><a href="/about" class="text-slate-500 hover:text-slate-700 text-sm transition-colors no-underline">{tzh('about.title')}</a></li>
+            <li><a href="/contact" class="text-slate-500 hover:text-slate-700 text-sm transition-colors no-underline">{tzh('contact.title')}</a></li>
+            <li><a href="/blog" class="text-slate-500 hover:text-slate-700 text-sm transition-colors no-underline">{tzh('nav.blog')}</a></li>
           </ul>
         </div>
       </div>
       <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
         <p class="text-slate-600 text-xs font-mono">{tzh('footer.copyright')}</p>
         <div class="flex gap-6">
-          <a href="/" class="text-slate-600 hover:text-slate-400 text-xs transition-colors no-underline">{tzh('nav.home')}</a>
-          <a href="/services" class="text-slate-600 hover:text-slate-400 text-xs transition-colors no-underline">{tzh('nav.services')}</a>
-          <a href="/blog" class="text-slate-600 hover:text-slate-400 text-xs transition-colors no-underline">{tzh('nav.blog')}</a>
-          <a href="/about" class="text-slate-600 hover:text-slate-400 text-xs transition-colors no-underline">{tzh('nav.about')}</a>
-          <a href="/contact" class="text-slate-600 hover:text-slate-400 text-xs transition-colors no-underline">{tzh('nav.contact')}</a>
+          <a href="/" class="text-slate-600 hover:text-slate-600 text-xs transition-colors no-underline">{tzh('nav.home')}</a>
+          <a href="/services" class="text-slate-600 hover:text-slate-600 text-xs transition-colors no-underline">{tzh('nav.services')}</a>
+          <a href="/blog" class="text-slate-600 hover:text-slate-600 text-xs transition-colors no-underline">{tzh('nav.blog')}</a>
+          <a href="/about" class="text-slate-600 hover:text-slate-600 text-xs transition-colors no-underline">{tzh('nav.about')}</a>
+          <a href="/contact" class="text-slate-600 hover:text-slate-600 text-xs transition-colors no-underline">{tzh('nav.contact')}</a>
         </div>
       </div>
     </div>

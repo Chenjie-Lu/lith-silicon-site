@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="1200"
+  height="690"
+  viewBox="0 0 1200 690"
+  role="img"
+  aria-labelledby="logoTitle logoDesc"
+>
+  <title id="logoTitle">LixSi Energy Logo</title>
+  <desc id="logoDesc">
+    Technology energy logo with battery-shaped i letters and lightning-integrated x.
+  </desc>
+
+  <defs>
+    <linearGradient
+      id="boltGradient"
+      x1="455"
+      y1="230"
+      x2="510"
+      y2="390"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#3978F6"/>
+      <stop offset="1" stop-color="#00B8C8"/>
+    </linearGradient>
+
+    <linearGradient
+      id="batteryGradient"
+      x1="0"
+      y1="350"
+      x2="75"
+      y2="0"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#82CE70"/>
+      <stop offset="0.48" stop-color="#45BBAF"/>
+      <stop offset="1" stop-color="#3978F6"/>
+    </linearGradient>
+
+    <linearGradient
+      id="motionGradient"
+      x1="0"
+      y1="0"
+      x2="1"
+      y2="0"
+    >
+      <stop offset="0" stop-color="#00B8C8"/>
+      <stop offset="1" stop-color="#3978F6"/>
+    </linearGradient>
+
+    <clipPath id="batteryClip">
+      <rect x="25" y="79" width="76" height="315" rx="10"/>
+    </clipPath>
+
+    <!-- 两个完全一致的电池形 i -->
+    <g id="batteryI">
+      <!-- 正极端子 -->
+      <path
+        fill="#20242F"
+        d="
+          M42 0
+          H88
+          C97 0 103 7 103 16
+          V34
+          H27
+          V16
+          C27 7 33 0 42 0
+          Z
+        "
+      />
+
+      <!-- 电池外壳 -->
+      <rect
+        x="0"
+        y="30"
+        width="128"
+        height="415"
+        rx="28"
+        fill="#20242F"
+      />
+
+      <!-- 电池内腔 -->
+      <rect
+        x="20"
+        y="55"
+        width="88"
+        height="365"
+        rx="14"
+        fill="#FFFFFF"
+      />
+
+      <!-- 能量区域 -->
+      <g clip-path="url(#batteryClip)">
+        <rect
+          x="25"
+          y="79"
+          width="76"
+          height="315"
+          fill="url(#batteryGradient)"
+        />
+
+        <!-- 三层能量区 -->
+        <path
+          fill="#3978F6"
+          d="M17 65 H110 V150 L17 185 Z"
+        />
+
+        <path
+          fill="#45BBAF"
+          d="M17 185 L110 150 V265 L17 297 Z"
+        />
+
+        <path
+          fill="#82CE70"
+          d="M17 297 L110 265 V410 H17 Z"
+        />
+
+        <!-- 轻量化分界线 -->
+        <path
+          d="M17 185 L110 150"
+          fill="none"
+          stroke="#8ADDD0"
+          stroke-width="3"
+          opacity="0.85"
+        />
+
+        <path
+          d="M17 297 L110 265"
+          fill="none"
+          stroke="#B7E88A"
+          stroke-width="3"
+          opacity="0.9"
+        />
+      </g>
+    </g>
+  </defs>
+
+  <!-- 白色背景 -->
+  <rect width="1200" height="690" fill="#FFFFFF"/>
+
+  <!-- =========================== -->
+  <!-- 上方 LixSi 主标志           -->
+  <!-- =========================== -->
+
+  <!-- L -->
+  <path
+    fill="#20242F"
+    d="
+      M48 68
+      H109
+      V347
+      C109 377 124 391 155 391
+      H264
+      L289 445
+      H148
+      C81 445 48 410 48 347
+      Z
+    "
+  />
+
+  <!-- 第一个电池形 i -->
+  <use xlink:href="#batteryI" transform="translate(300 68)"/>
+
+  <!-- 融合闪电的 x -->
+  <g>
+    <!-- 深色稳定笔画 -->
+    <path
+      d="M463 259 L559 355"
+      fill="none"
+      stroke="#20242F"
+      stroke-width="27"
+      stroke-linecap="round"
+    />
+
+    <!-- 闪电笔画 -->
+    <path
+      fill="url(#boltGradient)"
+      d="
+        M579 235
+        L516 278
+        L542 304
+        L466 379
+        L503 316
+        L477 288
+        Z
+      "
+    />
+
+    <!-- 中心高光 -->
+    <path
+      d="M516 280 L537 301"
+      fill="none"
+      stroke="#9BE4E7"
+      stroke-width="4"
+      stroke-linecap="round"
+      opacity="0.75"
+    />
+  </g>
+
+  <!-- S，缩小并收紧比例 -->
+  <path
+    fill="#20242F"
+    d="
+      M918 68
+      L895 122
+      H758
+      C726 122 711 138 711 169
+      C711 198 724 211 754 216
+      L844 229
+      C906 238 935 273 935 335
+      C935 404 901 445 836 445
+      H624
+      L649 391
+      H830
+      C866 391 881 375 881 344
+      C881 316 868 304 837 299
+      L746 287
+      C686 279 656 244 656 178
+      C656 107 691 68 757 68
+      Z
+    "
+  />
+
+  <!-- 第二个电池形 i -->
+  <use xlink:href="#batteryI" transform="translate(958 68)"/>
+
+  <!-- =========================== -->
+  <!-- 下方 ENERGY                  -->
+  <!-- =========================== -->
+
+  <g
+    fill="none"
+    stroke="#748198"
+    stroke-width="25"
+    stroke-linecap="square"
+    stroke-linejoin="bevel"
+  >
+    <!-- E -->
+    <path d="M195 526 H112 V615 H195"/>
+    <path d="M112 570 H180"/>
+
+    <!-- N -->
+    <path d="M244 615 V526 L330 615 V526"/>
+
+    <!-- E -->
+    <path d="M430 526 H347 V615 H430"/>
+    <path d="M347 570 H415"/>
+
+    <!-- R -->
+    <path
+      d="
+        M478 615
+        V526
+        H531
+        C559 526 572 539 572 561
+        C572 583 558 594 531 594
+        H478
+        M531 594 L578 615
+      "
+    />
+
+    <!-- G -->
+    <path
+      d="
+        M755 548
+        C742 533 727 526 706 526
+        C675 526 658 543 658 570
+        C658 598 676 615 707 615
+        C728 615 744 609 758 598
+        V574
+        H720
+      "
+    />
+
+    <!-- Y -->
+    <path d="M804 526 L850 574 L896 526"/>
+    <path d="M850 574 V615"/>
+  </g>
+
+  <!-- 短推进线，避免过长破坏构图 -->
+  <path
+    d="M112 644 H820"
+    fill="none"
+    stroke="url(#motionGradient)"
+    stroke-width="6"
+    stroke-linecap="round"
+    opacity="0.75"
+  />
+
+  <path
+    d="M820 644 L803 636 M820 644 L803 652"
+    fill="none"
+    stroke="#3978F6"
+    stroke-width="5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.8"
+  />
+
+  <!-- 左侧起始能量节点 -->
+  <circle cx="112" cy="644" r="4" fill="#00B8C8"/>
+  <circle cx="130" cy="644" r="2.5" fill="#58C8D0"/>
+</svg>

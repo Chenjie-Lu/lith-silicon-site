@@ -15,14 +15,14 @@ const sections = [
 <div class="space-y-8">
   {sections.map((section) => (
     <div>
-      <h2 class="text-xl font-bold text-white mb-4">{section.h}</h2>
-      <p class="text-slate-400 leading-relaxed mb-4">{section.p}</p>
+      <h2 class="text-xl font-bold text-slate-900 mb-4">{section.h}</h2>
+      <p class="text-slate-600 leading-relaxed mb-4">{section.p}</p>
       {section.items && (
-        <ul class="text-slate-400 space-y-2 list-disc ml-6">
+        <ul class="text-slate-600 space-y-2 list-disc ml-6">
           {section.items.map((item) => <li key={item} class="leading-relaxed" set:html={item} />)}
         </ul>
       )}
-      {section.note && <p class="text-slate-400 leading-relaxed mt-4">{section.note}</p>}
+      {section.note && <p class="text-slate-600 leading-relaxed mt-4">{section.note}</p>}
     </div>
   ))}
 </div>

@@ -20,10 +20,10 @@ const pageDesc = isZh
 </head>
 
 <Layout>
-  <section class="pt-28 pb-20 bg-[#070b14]" id="main-content">
+  <section class="pt-28 pb-20 bg-white" id="main-content">
     <div class="max-w-4xl mx-auto px-6">
       <div class="observe">
-        <h1 class="text-4xl md:text-6xl font-black text-white mb-4">
+        <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-4">
           {isZh ? '隐私政策' : 'Privacy Policy'}
         </h1>
         <p class="text-slate-500 text-sm font-mono">
@@ -33,7 +33,7 @@ const pageDesc = isZh
     </div>
   </section>
 
-  <section class="py-24 bg-[#070b14]">
+  <section class="py-24 bg-white">
     <div class="max-w-4xl mx-auto px-6">
       <div class="observe card p-10">
         {isZh ? <PrivacyZh /> : <PrivacyEn />}
