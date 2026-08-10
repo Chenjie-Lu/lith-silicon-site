@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Identity Proxy</title>
+</head>
+<body>
+  <h1>Identity Proxy</h1>
+  <p>This page proxies the Decap CMS identity service.</p>
+  <script>
+    // Simple proxy for Decap CMS identity
+    fetch('/.netlify/identity', { method: 'GET' })
+      .then(res => res.text())
+      .then(html => document.write(html))
+      .catch(() => document.write('<p>Identity service not available. Using GitHub OAuth directly.</p>'));
+  </script>
+</body>
+</html>
