@@ -12,10 +12,12 @@ export default defineConfig({
     plugins: [
       tailwindcss(),
       {
-        name: 'set-content-type',
+        name: 'fix-svg-content-type',
         configureServer(server) {
           server.middlewares.use((req, res, next) => {
-            res.setHeader('Content-Type', 'text/html; charset=utf-8');
+            if (req.url?.endsWith('.svg')) {
+              res.setHeader('Content-Type', 'image/svg+xml');
+            }
             next();
           });
         },
