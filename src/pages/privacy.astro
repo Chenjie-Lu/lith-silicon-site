@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getLocale } from '../utils/site';
+import PrivacyZh from '../components/i18n/PrivacyZh.astro';
+import PrivacyEn from '../components/i18n/PrivacyEn.astro';
+
+const locale = getLocale();
+const isZh = locale === 'zh';
+const pageTitle = isZh ? '隐私政策 - 锂硅新能' : 'Privacy Policy - LiSi Energy';
+const pageDesc = isZh
+  ? '锂硅新能隐私政策，说明我们如何收集、使用和保护您的个人信息'
+  : 'LiSi Energy privacy policy explaining how we collect, use, and protect your personal information';
+---
+<head>
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDesc} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={pageDesc} />
+</head>
+
+<Layout>
+  <section class="pt-28 pb-20 bg-[#070b14]" id="main-content">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="observe">
+        <h1 class="text-4xl md:text-6xl font-black text-white mb-4">
+          {isZh ? '隐私政策' : 'Privacy Policy'}
+        </h1>
+        <p class="text-slate-500 text-sm font-mono">
+          {isZh ? '最后更新：2026年8月10日' : 'Last updated: August 10, 2026'}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-[#070b14]">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="observe card p-10">
+        {isZh ? <PrivacyZh /> : <PrivacyEn />}
+      </div>
+    </div>
+  </section>
+</Layout>

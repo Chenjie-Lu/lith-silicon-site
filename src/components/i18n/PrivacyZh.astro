@@ -1,0 +1,28 @@
+---
+const sections = [
+  { h: '1. 引言', p: '杭州锂硅新能源有限公司（以下简称「我们」）尊重并保护您的隐私。本隐私政策说明我们如何收集、使用、存储和保护您的个人信息。继续使用我们的网站即表示您同意本政策。' },
+  { h: '2. 我们收集的信息', p: '我们可能收集以下类型的信息：', items: ['<strong>联系信息：</strong> 通过联系表单提交的姓名、邮箱、公司名称', '<strong>技术数据：</strong> IP 地址、浏览器类型、访问日期等日志信息', '<strong>Cookie 数据：</strong> 用于改善网站体验的技术 Cookie'] },
+  { h: '3. 信息的使用', p: '我们使用收集的信息用于以下目的：', items: ['回复您的咨询和沟通请求', '改进网站功能和用户体验', '分析网站使用情况（通过第三方分析工具）', '遵守法律义务'] },
+  { h: '4. 信息分享与披露', p: '我们不会出售、出租或交易您的个人信息。仅在以下情况下可能分享信息：', items: ['经您明确同意', '为履行法律义务或响应合法请求', '第三方服务提供商（如邮件发送、网站分析），受保密义务约束'] },
+  { h: '5. 数据安全', p: '我们采取合理的技术和组织措施保护您的个人信息安全。但请注意，互联网传输无法保证绝对安全，我们无法确保信息在传输过程中的100%安全。' },
+  { h: '6. Cookie 使用', p: '本网站使用必要的技术 Cookie 来确保网站正常运行和改善用户体验。您可以通过浏览器设置管理或禁用 Cookie，但这可能影响网站功能。' },
+  { h: '7. 第三方服务', p: '本网站可能包含第三方服务，包括但不限于：', items: ['FormSubmit — 处理联系表单提交', 'Google Fonts — 字体加载服务', 'Decap CMS — 内容管理系统后台'], note: '这些第三方服务有自己的隐私政策，我们建议查阅其相关政策。' },
+  { h: '8. 您的权利', p: '根据 applicable law，您享有以下权利：', items: ['访问您提供的个人信息', '要求更正不准确的信息', '要求删除您的个人信息', '反对或限制数据处理', '数据可携权'], note: '如需行使上述权利，请通过 contact@lith-silicon.com 联系我们。' },
+  { h: '9. 政策更新', p: '我们可能会不定期更新本隐私政策。重大变更将通过网站公告或电子邮件通知您。建议您定期查阅本页面以了解最新信息。' },
+  { h: '10. 联系我们', p: '如对隐私政策有任何疑问，请通过以下方式联系我们：', items: ['邮箱：contact@lith-silicon.com', '地址：浙江省杭州市'] },
+];
+---
+<div class="space-y-8">
+  {sections.map((section) => (
+    <div>
+      <h2 class="text-xl font-bold text-white mb-4">{section.h}</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">{section.p}</p>
+      {section.items && (
+        <ul class="text-slate-400 space-y-2 list-disc ml-6">
+          {section.items.map((item) => <li key={item} class="leading-relaxed" set:html={item} />)}
+        </ul>
+      )}
+      {section.note && <p class="text-slate-400 leading-relaxed mt-4">{section.note}</p>}
+    </div>
+  ))}
+</div>

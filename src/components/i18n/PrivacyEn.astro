@@ -1,0 +1,28 @@
+---
+const sections = [
+  { h: '1. Introduction', p: 'Hangzhou LiSi Energy Co., Ltd. (hereinafter referred to as "we") respect and protect your privacy. This privacy policy explains how we collect, use, store, and protect your personal information. Continued use of our website constitutes your acceptance of this policy.' },
+  { h: '2. Information We Collect', p: 'We may collect the following types of information:', items: ['<strong>Contact Information:</strong> Name, email, and company name submitted through contact forms', '<strong>Technical Data:</strong> IP address, browser type, access dates, and other log information', '<strong>Cookie Data:</strong> Technical cookies used to improve website experience'] },
+  { h: '3. Use of Information', p: 'We use collected information for the following purposes:', items: ['Responding to your inquiries and communication requests', 'Improving website functionality and user experience', 'Analyzing website usage (through third-party analytics tools)', 'Complying with legal obligations'] },
+  { h: '4. Information Sharing and Disclosure', p: 'We do not sell, rent, or trade your personal information. Information may only be shared under the following circumstances:', items: ['With your explicit consent', 'To fulfill legal obligations or respond to lawful requests', 'By third-party service providers (e.g., email delivery, web analytics), bound by confidentiality obligations'] },
+  { h: '5. Data Security', p: 'We take reasonable technical and organizational measures to protect your personal information security. However, please note that internet transmission cannot guarantee absolute security, and we cannot ensure 100% security of information during transmission.' },
+  { h: '6. Cookie Usage', p: 'This website uses necessary technical cookies to ensure proper operation and improve user experience. You can manage or disable cookies through your browser settings, but this may affect website functionality.' },
+  { h: '7. Third-Party Services', p: 'This website may include third-party services, including but not limited to:', items: ['FormSubmit — handles contact form submissions', 'Google Fonts — font loading service', 'Decap CMS — content management system backend'], note: 'These third-party services have their own privacy policies, and we recommend reviewing their respective policies.' },
+  { h: '8. Your Rights', p: 'Under applicable law, you have the following rights:', items: ['Access the personal information you have provided', 'Request correction of inaccurate information', 'Request deletion of your personal information', 'Object to or restrict data processing', 'Data portability'], note: 'To exercise these rights, please contact us at contact@lith-silicon.com.' },
+  { h: '9. Policy Updates', p: 'We may update this privacy policy from time to time. Material changes will be announced on the website or via email. We recommend periodically reviewing this page for the latest information.' },
+  { h: '10. Contact Us', p: 'If you have any questions about this privacy policy, please contact us:', items: ['Email: contact@lith-silicon.com', 'Address: Hangzhou, Zhejiang, China'] },
+];
+---
+<div class="space-y-8">
+  {sections.map((section) => (
+    <div>
+      <h2 class="text-xl font-bold text-white mb-4">{section.h}</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">{section.p}</p>
+      {section.items && (
+        <ul class="text-slate-400 space-y-2 list-disc ml-6">
+          {section.items.map((item) => <li key={item} class="leading-relaxed" set:html={item} />)}
+        </ul>
+      )}
+      {section.note && <p class="text-slate-400 leading-relaxed mt-4">{section.note}</p>}
+    </div>
+  ))}
+</div>
