@@ -3,20 +3,29 @@ import Layout from '../../layouts/Layout.astro';
 import { t, getLocale } from '../../utils/site';
 import { blogPosts } from '../../data/blog-posts';
 
-export const getStaticPaths = () => [
-  { params: { slug: 'silicon-carbon-anode-development-trends-2026' } },
-  { params: { slug: 'silicon-carbon-anode-development-trends-2026-en' } },
-];
-
 const locale = getLocale();
 const tzh = (key) => t(key, locale);
 const post = blogPosts['silicon-carbon-anode-development-trends-2026'];
 const isEn = locale === 'en';
-const title = isEn ? post.titleEn : post.title;
-const articleContent = isEn ? (post.contentEn || post.content) : post.content;
 const category = isEn ? post.categoryEn : post.category;
 const tags = isEn ? post.tagsEn : post.tags;
+const articleContent = isEn ? (post.contentEn || post.content) : post.content;
+const postTitle = isEn ? post.titleEn : post.title;
+
+export const getStaticPaths = () => [
+  { params: { slug: 'silicon-carbon-anode-development-trends-2026' } },
+];
 ---
+<head>
+  <title>{postTitle}</title>
+  <meta name="description" content={isEn ? post.excerptEn : post.excerpt} />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={postTitle} />
+  <meta property="og:description" content={isEn ? post.excerptEn : post.excerpt} />
+  <meta property="article:published_time" content={post.date} />
+  <meta property="article:section" content={category} />
+  {tags.map(tag => <meta key={tag} property="article:tag" content={tag} />)}
+</head>
 
 <Layout>
   <section class="pt-28 pb-20 bg-[#070b14]" id="main-content">
@@ -30,7 +39,7 @@ const tags = isEn ? post.tagsEn : post.tags;
           <span class="px-3 py-1.5 bg-blue-500/10 text-blue-400 text-xs font-mono rounded-full border border-blue-500/20">{category}</span>
           <span class="text-slate-500 text-sm font-mono">{post.date}</span>
         </div>
-        <h1 class="text-3xl md:text-5xl font-black text-white leading-tight mb-8">{title}</h1>
+        <h1 class="text-3xl md:text-5xl font-black text-white leading-tight mb-8">{postTitle}</h1>
         <div class="flex gap-2 flex-wrap">
           {tags.map(tag => <span key={tag} class="px-2.5 py-1 bg-slate-800 text-slate-400 text-sm rounded-full border border-white/5 font-mono">{tag}</span>)}
         </div>

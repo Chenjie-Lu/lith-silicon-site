@@ -4,7 +4,17 @@ import { t, getLocale, services } from '../utils/site';
 
 const locale = getLocale();
 const tzh = (key) => t(key, locale);
+export const title = '技术服务 — 锂硅新能';
+export const description = '硅碳负极材料配方优化、电化学性能提升、产业化工艺指导等6大技术服务领域';
+export const ogType = 'website';
 ---
+<head>
+  <title>技术服务 — 锂硅新能</title>
+  <meta name="description" content="硅碳负极材料配方优化、电化学性能提升、产业化工艺指导等6大技术服务领域" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="技术服务 — 锂硅新能" />
+  <meta property="og:description" content="硅碳负极材料配方优化、电化学性能提升、产业化工艺指导等6大技术服务领域" />
+</head>
 
 <Layout>
   <section class="pt-28 pb-20 bg-[#070b14]" id="main-content">

@@ -4,9 +4,28 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="generator" content={Astro.generator} />
-  <title>{(Astro.frontmatter && Astro.frontmatter.title) ? Astro.frontmatter.title : '锂硅新能'}</title>
-  <meta name="description" content={(Astro.frontmatter && Astro.frontmatter.description) ? Astro.frontmatter.description : '锂硅新能 — 硅碳负极材料技术顾问'} />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={Astro.url?.href ?? ''} />
+  <title>{Astro.title ?? '锂硅新能'}</title>
+  <meta name="description" content={Astro.description ?? '锂硅新能 — 硅碳负极材料技术顾问'} />
+  <!-- OG / Social -->
+  <meta property="og:site_name" content="锂硅新能 · LixSi Energy" />
+  <meta property="og:type" content={Astro.ogType ?? 'website'} />
+  <meta property="og:title" content={Astro.title ?? '锂硅新能 — 硅碳负极材料技术顾问'} />
+  <meta property="og:description" content={Astro.description ?? '锂硅新能 — 硅碳负极材料技术顾问'} />
+  <meta property="og:url" content={Astro.url?.href ?? ''} />
+  <meta property="og:image" content="https://lith-silicon.vercel.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={Astro.title ?? '锂硅新能 — 硅碳负极材料技术顾问'} />
+  <meta name="twitter:description" content={Astro.description ?? '锂硅新能 — 硅碳负极材料技术顾问'} />
+  <meta name="twitter:image" content="https://lith-silicon.vercel.app/og-image.png" />
+  <!-- JSON-LD Organization -->
+  <script type="application/ld+json" set:html={`{"@context":"https://schema.org","@type":"Organization","name":"杭州锂硅新能源有限公司","alternateName":"LiSi Energy / LixSi","url":"https://lith-silicon.vercel.app","logo":"https://lith-silicon.vercel.app/logo.svg","description":"锂离子电池硅碳负极材料技术顾问，为初创电池企业提供从材料配方到产业化工艺的全流程技术支持","foundingDate":"2023","address":{"@type":"PostalAddress","addressRegion":"浙江省","addressLocality":"杭州市","addressCountry":"CN"}}"}`}>
+  </script>
   <link rel="stylesheet" href="/src/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

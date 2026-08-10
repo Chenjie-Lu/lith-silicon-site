@@ -4,7 +4,17 @@ import { t, getLocale } from '../utils/site';
 
 const locale = getLocale();
 const tzh = (key) => t(key, locale);
+export const title = '页面未找到 — 锂硅新能';
+export const description = '抱歉，您访问的页面不存在';
+export const ogType = 'website';
 ---
+<head>
+  <title>页面未找到 — 锂硅新能</title>
+  <meta name="description" content="抱歉，您访问的页面不存在" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="页面未找到 — 锂硅新能" />
+  <meta property="og:description" content="抱歉，您访问的页面不存在" />
+</head>
 
 <Layout>
   <div class="min-h-[100dvh] flex items-center justify-center bg-[#070b14] pt-16">
